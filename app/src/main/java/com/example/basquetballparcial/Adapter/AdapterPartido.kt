@@ -24,7 +24,9 @@ class AdapterPartido(var partido : List<partido>, var clickListener: (partido) -
 
     class ViewHolder(var item : View) : RecyclerView.ViewHolder(item){
         fun onBind(partido: partido, clickListener: (partido) -> Unit){
-            itemView.tv_partido.text = partido.equipo1 + " vs " + partido.equipo2
+            itemView.tv_partido.text = "Partido: " + partido.equipo1 + " vs " + partido.equipo2
+            itemView.tv_fecha.text = "Fecha: " + partido.fecha
+            itemView.tv_hora.text = "Hora: " + partido.hora
 
             this.item.setOnClickListener{
                 clickListener(partido)

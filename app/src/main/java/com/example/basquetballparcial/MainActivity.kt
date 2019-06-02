@@ -2,6 +2,7 @@ package com.example.basquetballparcial
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
@@ -16,34 +17,28 @@ import com.example.basquetballparcial.ViewModel.PartidoViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), fragment_principal.OnListener  {
 
     private lateinit var partidoViewModel : PartidoViewModel
     private lateinit var adapterPartido : AdapterPartido
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        partidoViewModel = ViewModelProviders.of(this).get(PartidoViewModel::class.java)
-
-        adapterPartido = AdapterPartido(emptyList(), {partido:partido -> (mostrarPartido(partido))})
-        rv_partido.adapter = adapterPartido
-        rv_partido.layoutManager = LinearLayoutManager(this)
-
-        partidoViewModel.allPartido.observe(this, Observer {partido ->
-            partido?.let{ adapterPartido.setPartido(it) }
-        })
-
-        fab.setOnClickListener { view ->
-            var intent = Intent(this, PartidoActivity::class.java)
-            startActivity(intent)
+        if (fab != null){
+            fab.setOnClickListener { view ->
+                var intent = Intent(this, PartidoActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
-    fun mostrarPartido(partido: partido){
-
+    override fun mostrarPartido(partido: partido){
+        var intent = Intent(this, InfoActivity::class.java)
+        intent.putExtra("Info", partido as Parcelable)
+        startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
