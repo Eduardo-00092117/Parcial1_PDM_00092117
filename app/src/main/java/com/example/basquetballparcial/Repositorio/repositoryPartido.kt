@@ -2,8 +2,8 @@ package com.example.basquetballparcial.Repositorio
 
 import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
-import com.example.basquetballparcial.Dao.partidoDao
-import com.example.basquetballparcial.Entities.partido
+import com.example.basquetballparcial.Database.Dao.partidoDao
+import com.example.basquetballparcial.Database.Entities.partido
 
 class repositoryPartido(private val partidoDao : partidoDao) {
 

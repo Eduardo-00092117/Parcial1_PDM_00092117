@@ -1,11 +1,10 @@
-package com.example.basquetballparcial
+package com.example.basquetballparcial.Activity
 
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.example.basquetballparcial.Entities.partido
-import kotlinx.android.synthetic.main.activity_info.*
+import com.example.basquetballparcial.R
+import com.example.basquetballparcial.Fragment.fragment_info
 
 class InfoActivity : AppCompatActivity(), fragment_info.OnFragmentInteractionListener {
     override fun onFragmentInteraction(uri: Uri) {
@@ -16,6 +15,6 @@ class InfoActivity : AppCompatActivity(), fragment_info.OnFragmentInteractionLis
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
         var instance = fragment_info.newInstance(intent.getParcelableExtra("Info"))
-        supportFragmentManager.beginTransaction().add(R.id.secundario, instance).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.secundario, instance).commit()
     }
 }

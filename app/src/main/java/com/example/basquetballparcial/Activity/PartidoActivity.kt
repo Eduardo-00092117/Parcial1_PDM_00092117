@@ -1,17 +1,15 @@
-package com.example.basquetballparcial
+package com.example.basquetballparcial.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
-import com.example.basquetballparcial.Entities.partido
+import com.example.basquetballparcial.Database.Entities.partido
+import com.example.basquetballparcial.R
 import com.example.basquetballparcial.ViewModel.PartidoViewModel
-import com.example.basquetballparcial.ViewModel.PuntuacionesViewModel
 import kotlinx.android.synthetic.main.activity_partido.*
-import org.w3c.dom.Text
 
 class PartidoActivity : AppCompatActivity() {
 
@@ -26,18 +24,24 @@ class PartidoActivity : AppCompatActivity() {
         tv_cont_A.text = partidoView.puntuacionA.toString()
         tv_cont_B.text = partidoView.puntuacionB.toString()
 
+        tv_equipo1.text = intent.getStringExtra("equipo1")
+        tv_equipo2.text = intent.getStringExtra("equipo2")
+        tv_fecha.text = "Fecha: " + intent.getStringExtra("fecha")
+        tv_hora.text = "Hora: " + intent.getStringExtra("hora")
+
         btn_Guardar.setOnClickListener {
             var equipoGanador = ""
             if (tv_cont_A.text.toString().toInt() > tv_cont_B.text.toString().toInt()){
-                equipoGanador = ed_equipo1.text.toString()
+                equipoGanador = tv_equipo1.text.toString()
             } else if (tv_cont_A.text.toString().toInt() < tv_cont_B.text.toString().toInt()){
-                equipoGanador = ed_equipo2.text.toString()
+                equipoGanador = tv_equipo2.text.toString()
             } else{
                 equipoGanador = "Empate"
             }
-            partidoView.insert(partido(ed_equipo1.text.toString(), ed_equipo2.text.toString(), tv_cont_A.text.toString().toInt(), tv_cont_B.text.toString().toInt(), equipoGanador, et_fecha.text.toString(), et_hora.text.toString()))
+            partidoView.insert(partido(tv_equipo1.text.toString(), tv_equipo2.text.toString(), tv_cont_A.text.toString().toInt(), tv_cont_B.text.toString().toInt(), equipoGanador, intent.getStringExtra("fecha"), intent.getStringExtra("hora")))
             Toast.makeText(this, "Partido guardado!!", Toast.LENGTH_LONG).show()
-            onBackPressed()
+            var intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
         btn_cancelar.setOnClickListener {
             onBackPressed()

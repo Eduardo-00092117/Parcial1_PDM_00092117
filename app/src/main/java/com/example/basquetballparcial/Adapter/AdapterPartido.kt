@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.basquetballparcial.Entities.partido
+import com.example.basquetballparcial.Database.Entities.partido
 import com.example.basquetballparcial.R
 import kotlinx.android.synthetic.main.recycleritem.view.*
 

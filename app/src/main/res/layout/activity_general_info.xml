@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+              android:orientation="vertical"
+    tools:context=".Activity.generalInfo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/titulo"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/size_small"
+            android:textSize="@dimen/size_large"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/colorRojo"
+            android:text="Datos del partido"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_medium"
+                android:textColor="@color/colorBlack"
+                android:text="Equipo 1:"/>
+            <EditText
+                android:id="@+id/ed_equipo1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_medium"
+                android:textColor="@color/colorBlack"
+                android:text="Equipo 2:"/>
+            <EditText
+                android:id="@+id/ed_equipo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_medium"
+                android:textColor="@color/colorBlack"
+                android:text="Fecha:"/>
+            <DatePicker
+                android:id="@+id/et_fecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_medium"
+                android:textColor="@color/colorBlack"
+                android:text="Hora:"/>
+            <EditText
+                android:id="@+id/et_hora"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:hint="HH:MM"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/size_small"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_iniciar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:textColor="@color/colorWhite"
+                android:layout_marginRight="@dimen/size_small"
+                android:padding="@dimen/size_small"
+                android:drawableLeft="@drawable/iniciar"
+                android:text="Iniciar partido"/>
+            <Button
+                android:id="@+id/btn_cancelar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/size_small"
+                android:background="@color/colorAccent"
+                android:textColor="@color/colorWhite"
+                android:padding="@dimen/size_small"
+                android:drawableLeft="@drawable/cancel"
+                android:text="Cancelar"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -5,18 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PartidoActivity">
+    tools:context=".Activity.PartidoActivity">
 
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+        <include layout="@layout/titulo"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableBottom="@drawable/partido"/>
+
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:padding="@dimen/size_medium">
             <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="1"
@@ -24,28 +32,30 @@
                     android:orientation="vertical">
 
                 <TextView
+                        android:id="@+id/tv_equipo1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:textColor="@color/colorBlack"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="@dimen/size_20"
                         android:text="Team A"/>
-                <EditText
-                        android:id="@+id/ed_equipo1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Nombre"/>
 
                 <TextView
                         android:id="@+id/tv_cont_A"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textSize="64dp"
+                        android:textSize="@dimen/size_64"
+                        android:textColor="@color/colorBlack"
                         android:text="0"/>
 
                 <Button
                         android:id="@+id/btn_3puntos_A"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/colorRojo"
+                        android:textColor="@color/colorWhite"
                         android:layout_gravity="center"
                         android:onClick="functionButton"
                         android:text="3 puntos"/>
@@ -54,6 +64,8 @@
                         android:id="@+id/btn_2puntos_A"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/colorRojo"
+                        android:textColor="@color/colorWhite"
                         android:layout_gravity="center"
                         android:onClick="functionButton"
                         android:text="2 puntos"/>
@@ -63,6 +75,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="@color/colorRojo"
+                        android:textColor="@color/colorWhite"
                         android:onClick="functionButton"
                         android:text="1 punto"/>
 
@@ -71,10 +85,10 @@
             <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="#D8D4D4" />
+                    android:layout_marginLeft="@dimen/size_medium"
+                    android:layout_marginTop="@dimen/size_medium"
+                    android:layout_marginRight="@dimen/size_medium"
+                    android:background="@color/color_grey" />
 
             <LinearLayout
                     android:layout_width="0dp"
@@ -83,22 +97,22 @@
                     android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tv_equipo2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:textColor="@color/colorBlack"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="@dimen/size_20"
                         android:text="Team B"/>
-                <EditText
-                        android:id="@+id/ed_equipo2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Nombre"/>
 
                 <TextView
                         android:id="@+id/tv_cont_B"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textSize="64dp"
+                        android:textSize="@dimen/size_64"
+                        android:textColor="@color/colorBlack"
                         android:text="0"/>
 
                 <Button
@@ -106,6 +120,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="@color/colorRojo"
+                        android:textColor="@color/colorWhite"
                         android:onClick="functionButton"
                         android:text="3 puntos"/>
 
@@ -114,6 +130,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="@color/colorRojo"
+                        android:textColor="@color/colorWhite"
                         android:onClick="functionButton"
                         android:text="2 puntos"/>
 
@@ -122,6 +140,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="@color/colorRojo"
+                        android:textColor="@color/colorWhite"
                         android:onClick="functionButton"
                         android:text="1 punto"/>
 
@@ -131,48 +151,54 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
+                android:padding="@dimen/size_medium"
                 android:orientation="vertical">
             <TextView
+                    android:id="@+id/tv_fecha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/size_20"
+                    android:textColor="@color/colorBlack"
                     android:text="Fecha:"/>
-            <EditText
-                    android:id="@+id/et_fecha"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="DD/MM/YYYY"/>
+
             <TextView
+                    android:id="@+id/tv_hora"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/size_20"
+                    android:textColor="@color/colorBlack"
                     android:text="Hora:"/>
-            <EditText
-                    android:id="@+id/et_hora"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="HH/MM"/>
         </LinearLayout>
 
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
+            <Button
+                android:id="@+id/btn_cancelar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/size_small"
+                android:padding="@dimen/size_small"
+                android:layout_marginRight="@dimen/size_small"
+                android:drawableLeft="@drawable/back"
+                android:background="@color/colorAccent"
+                android:textColor="@color/colorWhite"
+                android:text="Atras"/>
             <Button
                     android:id="@+id/btn_Guardar"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp"
-                    android:text="Guardar"/>
-            <Button
-                    android:id="@+id/btn_cancelar"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="8dp"
-                    android:text="Cancelar"/>
+                    android:layout_margin="@dimen/size_small"
+                    android:layout_marginLeft="@dimen/size_small"
+                    android:drawableLeft="@drawable/finalizar"
+                    android:background="@color/colorAccent"
+                    android:padding="@dimen/size_small"
+                    android:textColor="@color/colorWhite"
+                    android:text="Finalizar"/>
         </LinearLayout>
     </LinearLayout>
     

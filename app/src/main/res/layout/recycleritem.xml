@@ -13,24 +13,26 @@
         android:orientation="vertical">
         <TextView
             android:id="@+id/tv_partido"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:padding="@dimen/size_small"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:textColor="#B80000"
+            android:background="#5E5E5E"
+            android:textSize="@dimen/size_medium"
+            android:textColor="@color/colorWhite"
             android:text="Equipo 1"/>
         <TextView
             android:id="@+id/tv_fecha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:textColor="#000"
+            android:textSize="@dimen/size_medium"
+            android:textColor="@color/colorBlack"
             android:text="Fecha: "/>
         <TextView
             android:id="@+id/tv_hora"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="16dp"
-            android:textColor="#000"
+            android:textSize="@dimen/size_medium"
+            android:textColor="@color/colorBlack"
             android:text="Hora: "/>
     </LinearLayout>
 

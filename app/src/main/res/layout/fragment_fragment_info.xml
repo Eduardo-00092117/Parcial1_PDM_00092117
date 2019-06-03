@@ -3,13 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InfoActivity">
+    tools:context=".Activity.InfoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
+        android:padding="@dimen/size_medium"
         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/size_small"
+            android:textSize="@dimen/size_large"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/colorRojo"
+            android:text="Partido"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -19,35 +29,43 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/size_medium"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_info_equipoA"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_info_equipos"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:padding="@dimen/size_small"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:text="Equipo 1: N/A - Puntuacion: 0"/>
+                android:textSize="@dimen/size_20"
+                android:textColor="@color/colorBlack"
+                android:text="Equipo 1 vs Equipo 2"/>
 
             <TextView
-                android:id="@+id/tv_info_equipoB"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_info_puntuacion"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:padding="@dimen/size_medium"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:text="Equipo 2: N/A - Puntuacion: 0"/>
+                android:textSize="@dimen/size_medium"
+                android:textColor="@color/colorBlack"
+                android:text="(0 - 0)"/>
 
             <TextView
                 android:id="@+id/tv_info_fecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
+                android:textSize="@dimen/size_medium"
+                android:textColor="@color/colorBlack"
                 android:text="Fecha: N/A"/>
 
             <TextView
                 android:id="@+id/tv_info_hora"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
+                android:textSize="@dimen/size_medium"
+                android:textColor="@color/colorBlack"
                 android:text="Hora: N/A"/>
 
             <TextView
@@ -55,8 +73,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="32dp"
-                android:textSize="32dp"
+                android:padding="@dimen/size_large"
+                android:textColor="@color/colorAccent"
+                android:fontFamily="sans-serif-black"
+                android:textSize="@dimen/size_large"
                 android:text="Ganador: N/A"/>
         </LinearLayout>
     </LinearLayout>

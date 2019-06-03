@@ -1,11 +1,11 @@
-package com.example.basquetballparcial.Dao
+package com.example.basquetballparcial.Database.Dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.basquetballparcial.Entities.partido
+import com.example.basquetballparcial.Database.Entities.partido
 
 @Dao
 interface partidoDao {

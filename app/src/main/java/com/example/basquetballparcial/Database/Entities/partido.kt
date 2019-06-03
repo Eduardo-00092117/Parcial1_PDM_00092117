@@ -1,4 +1,4 @@
-package com.example.basquetballparcial.Entities
+package com.example.basquetballparcial.Database.Entities
 
 import android.os.Parcel
 import android.os.Parcelable

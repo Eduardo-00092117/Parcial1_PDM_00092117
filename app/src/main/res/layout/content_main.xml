@@ -5,16 +5,34 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:showIn="@layout/activity_main"
-        tools:context=".MainActivity">
+        tools:context=".Activity.MainActivity">
 
-    <fragment
-        android:name="com.example.basquetballparcial.fragment_principal"
-        android:id="@+id/principal"
+    <include layout="@layout/titulo"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:padding="@dimen/size_small"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/colorRojo"
+            android:textSize="@dimen/size_large"
+            android:gravity="center"
+            android:text="Partidos Anteriores"/>
+
+        <fragment
+            android:name="com.example.basquetballparcial.Fragment.fragment_principal"
+            android:id="@+id/principal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
 
 </LinearLayout>
