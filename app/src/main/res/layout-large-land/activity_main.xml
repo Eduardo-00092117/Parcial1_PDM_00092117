@@ -26,6 +26,7 @@
                 android:textSize="@dimen/size_large"
                 android:gravity="center"
                 android:text="Partidos Anteriores"/>
+
             <fragment
                 android:name="com.example.basquetballparcial.Fragment.fragment_principal"
                 android:id="@+id/principal"

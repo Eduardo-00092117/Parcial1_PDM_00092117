@@ -28,8 +28,8 @@
             android:text="Partidos Anteriores"/>
 
         <fragment
-            android:name="com.example.basquetballparcial.Fragment.fragment_principal"
             android:id="@+id/principal"
+            android:name="com.example.basquetballparcial.Fragment.fragment_principal"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

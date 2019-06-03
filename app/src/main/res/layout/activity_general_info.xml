@@ -39,6 +39,7 @@
                 android:id="@+id/ed_equipo1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 android:hint="Nombre"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -50,6 +51,7 @@
                 android:id="@+id/ed_equipo2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 android:hint="Nombre"/>
 
             <TextView
@@ -74,6 +76,7 @@
                 android:id="@+id/et_hora"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 android:inputType="time"
                 android:hint="HH:MM"/>
         </LinearLayout>

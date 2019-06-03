@@ -12,10 +12,7 @@ import com.example.basquetballparcial.Fragment.fragment_principal
 
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), fragment_principal.OnListener, fragment_info.OnFragmentInteractionListener {
-    override fun onFragmentInteraction(uri: Uri) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+class MainActivity : AppCompatActivity(), fragment_principal.OnListener {
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
